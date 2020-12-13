@@ -1,0 +1,34 @@
+package codeSolve;
+import java.util.Scanner;
+class Code{
+	static void arrayreverse(int arr[],int n){
+		Scanner sc = new Scanner(System.in);
+		int start,end,temp;
+		start =0;
+		end = n-1;
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}for(int i=0;i<n/2;i++) {
+			temp= arr[start];
+			arr[start]= arr[end];
+			arr[end]= temp;
+			start = start+1;
+			end = end-1;
+		}
+	}
+	static void arrprint(int arr[],int n) {
+		for(int  i=0;i<n;i++) {
+			System.out.print(arr[i]+ " ");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int arr[];
+		int n = sc.nextInt();
+		arr = new int[n];
+		arrayreverse(arr,n);
+		arrprint(arr,n);
+		
+	}
+	
+}
