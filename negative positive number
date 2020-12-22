@@ -1,0 +1,37 @@
+//Move all negative numbers to beginning and positive to end with constant extra space
+
+package codeSolve;
+import java.util.Scanner;
+class Code{
+	void rearrange(int arr[],int n) {
+		int temp,j =0;
+		for(int i=0;i<n;i++) {
+			if(arr[i]<0) {
+				if(i!=j) {
+					temp = arr[i];
+					arr[i]=arr[j];
+					arr[j]= temp;
+				}
+				j++;
+			}
+		}
+	}
+	void printArray(int arr[],int n) {
+		for(int i=0;i<n;i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	public static void main(String args[]){
+		Code obj = new Code();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Array Length : ");
+		int alength = sc.nextInt();
+		int arr[]= new int[alength];
+		System.out.println("Array Values :-");
+		for(int i=0;i<alength;i++) {
+			arr[i]= sc.nextInt();
+					}
+		obj.rearrange(arr, alength);
+		obj.printArray(arr, alength);
+	}
+}
