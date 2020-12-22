@@ -1,0 +1,32 @@
+package codeSolve;
+class Code{
+	static void twoPointer(int arr[],int left,int right) {
+		while (left <= right) {
+		if(arr[left]<0 && arr[right] <0)left++;
+		else if (arr[left] >0 && arr[right] <0) {
+			int temp = arr[left];
+		    arr[left]=arr[right];
+			arr[right]= temp;
+			left ++;
+			right--;
+		}
+		else if (arr[left] > 0 && arr[right] > 0 )right --;
+		else {
+			left ++;
+			right --;
+		}
+		}
+	}
+	static void printArray(int arr[],int length) {
+		for (int i=0;i<=length;i++) {
+			System.out.print(arr[i]+ " ");
+		}
+	}
+	public static void main(String args[]) {
+		int arr[]= {-45,885,-788,-87,-2,-9,44};
+		int arr_len = arr.length;
+		twoPointer(arr,0,arr_len-1);
+		printArray(arr,arr_len-1);
+	}
+	
+}
